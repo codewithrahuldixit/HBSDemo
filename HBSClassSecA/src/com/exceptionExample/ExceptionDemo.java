@@ -13,13 +13,18 @@ public class ExceptionDemo {
 		y=sc.nextInt();
 		//Handled by Default Handler
 		try {
-		if(y==0)
-		throw new ArithmeticException();
-		System.out.println(x/y);
-		}
+			//Implicitly the object of Arithmetic Exception is created by JVM
+			//PreDefined Exception
+			//throw is used to throw the exception Object
+				System.out.println(x/y);
+			}
 		catch(ArithmeticException e){
 			System.out.println(e);
 		}
+		
+
+		System.out.println("Code Completes Here");
+		
 		System.out.println("Code Completes Here");
 		
 
