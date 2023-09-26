@@ -13,7 +13,8 @@ public class BhbsSpringFrameworkApplication {
 
 	public static void main(String[] args) {
 		var context=
-				new AnnotationConfigApplicationContext(AppConfiguration.class);
+				new AnnotationConfigApplicationContext
+				(AppConfiguration.class);
 		Drawing drawing = context.getBean(Drawing.class);
 		drawing.draw();
 			}
