@@ -1,6 +1,11 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Drawing {
+
 	private Shape shape;
 
 	public Drawing() {
@@ -16,9 +21,10 @@ public class Drawing {
 	public Shape getShape() {
 		return shape;
 	}
-
+      @Autowired
 	public void setShape(Shape shape) {
 		this.shape = shape;
+		System.out.println("Setter executed");
 	}
 
 	@Override

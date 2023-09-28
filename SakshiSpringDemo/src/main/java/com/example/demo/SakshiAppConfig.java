@@ -1,24 +1,31 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
-@Configuration
+//@Configuration
 public class SakshiAppConfig {
 	@Bean
+	@Qualifier("Circle")
  public Circle getCircle()
  {
 	 return new Circle(10);
 	 
  }
 	@Bean
-	 public Drawing getDrawing(Shape shape)
+	 public Drawing getDrawing(@Qualifier("Circle")Shape shape)
 	 {
 		 return new Drawing(shape);
 		 
 	 }
-	  
+	 @Bean
+	 @Primary
+	 public Rectangle getRectangle()
+	 {
+		return new Rectangle(10,20); 
+	 }
 
 
 }
