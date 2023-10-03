@@ -16,6 +16,7 @@ public class CourseJdbcRunner implements CommandLineRunner{
 		
 		repository.save(new Course (101,"Java","Rahul"));
 		repository.save(new Course (102,"Java","Monika"));
+		repository.save(new Course (103,"Java","Arvind"));
 	}
 
 }
