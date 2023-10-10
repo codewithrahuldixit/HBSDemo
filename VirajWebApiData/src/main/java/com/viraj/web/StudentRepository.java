@@ -8,9 +8,10 @@ import jakarta.transaction.Transactional;
 @Repository
 @Transactional
 public class StudentRepository {
-	@Autowired
+@Autowired
 private EntityManager manager;
-	public void save(Student student) {
+	
+public void save(Student student) {
 		manager.merge(student);
 		
 	}
