@@ -7,6 +7,7 @@ public class CouplingDemo {
 		//Circle shape = new Circle(10);
 		Rectangle shape = new Rectangle();
 		//Square shape = new Square();
+		//Injecting Object into Drawing or Wiring
 		Drawing d1 = new Drawing(shape);
 		d1.draw();
 	}
