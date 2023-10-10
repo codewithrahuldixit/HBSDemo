@@ -2,6 +2,7 @@ package com.rahul.SpringWebDeb;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,12 @@ public class StudentService {
 	public void saveStudent(Student student) {
 		student.setId(++sid);
 		students.add(student);
+	}
+
+	public Student getById(int id) {
+		Predicate<? super Student> predicate = student -> student.getId()==id;
+		return students.stream().filter(predicate).findFirst().get();
+		
 	}
 
 }
