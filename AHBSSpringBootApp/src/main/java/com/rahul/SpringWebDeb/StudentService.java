@@ -23,5 +23,9 @@ public class StudentService {
 	public List < Student> getAllStudents() {
 		return students;
 	}
+	public void saveStudent(Student student) {
+		student.setId(++sid);
+		students.add(student);
+	}
 
 }
