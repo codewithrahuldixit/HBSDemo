@@ -3,8 +3,10 @@ package com.rahul.SpringWebDeb;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.rahul.SpringWebDeb.model.Student;
+import org.springframework.stereotype.Service;
 
+import com.rahul.SpringWebDeb.model.Student;
+@Service
 public class StudentService {
 	private static int sid =10;
 	private static ArrayList<Student> students = new ArrayList<Student>();
