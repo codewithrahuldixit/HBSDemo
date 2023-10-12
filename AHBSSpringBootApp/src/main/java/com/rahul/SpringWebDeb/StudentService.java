@@ -1,38 +1,46 @@
 package com.rahul.SpringWebDeb;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rahul.SpringWebDeb.model.Student;
 @Service
 public class StudentService {
-	private static int sid =10;
-	private static ArrayList<Student> students = new ArrayList<Student>();
-	static {
-		students.add(new Student(++sid,"Rahul",9015088066L));
-		students.add(new Student(++sid,"Dipanshu",9999999990L));
-		students.add(new Student(++sid,"Minhaz",9898989898L));
-		students.add(new Student(++sid,"Ashish",9876543210L));
-	}
-	public StudentService() {
-		
+	private int sid =10;
+	//private static ArrayList<Student> students = new ArrayList<Student>();
+	
+	
+	private  StudentRepository repository;
+
+	public StudentService(StudentRepository repository) {
+		this.repository=repository;
+		repository.save(new Student(++sid,"Rahul",9015088066L));
+		repository.save(new Student(++sid,"Dipanshu",9999999990L));
+		repository.save(new Student(++sid,"Minhaz",9898989898L));
+		repository.save(new Student(++sid,"Ashish",9876543210L));
+	
 	}
 	
 	public List < Student> getAllStudents() {
-		return students;
+		//return students;
+		return repository.findAll();
 	}
 	public void saveStudent(Student student) {
 		student.setId(++sid);
-		students.add(student);
+		repository.save(student);
 	}
 
 	public Student getById(int id) {
-		Predicate<? super Student> predicate = student -> student.getId()==id;
-		return students.stream().filter(predicate).findFirst().get();
+		//Predicate<? super Student> predicate = student -> student.getId()==id;
+		return repository.findById(id).get();
+		//return students.stream().filter(predicate).findFirst().get();
 		
 	}
+
+	public void deleteById(int id) {
+		repository.deleteById(id);	
+		}
 
 }
