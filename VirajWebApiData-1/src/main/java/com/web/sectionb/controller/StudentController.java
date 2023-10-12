@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.web.sectionb.model.Student;
@@ -28,5 +30,9 @@ public class StudentController {
 	@GetMapping("/students/{id}")
 	public Student getStudentById(@PathVariable int id) {
 		return  service.getById(id);
+	}
+	@PostMapping("/students")
+	public void storeStudent(@RequestBody Student student) {
+		service.save(student);
 	}
 }

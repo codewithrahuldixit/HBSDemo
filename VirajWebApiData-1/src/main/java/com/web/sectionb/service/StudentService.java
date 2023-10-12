@@ -27,5 +27,9 @@ static {
 		Predicate<? super Student> predicate = student -> student.getId()==id;
 		return students.stream().filter(predicate ).findFirst().get();
 	}
+	public void save(Student student) {
+		student.setId(++sid);
+		students.add(student);
+	}
 
 }
