@@ -34,5 +34,9 @@ public StudentService(StudentRepository repository) {
 		student.setId(++sid);
 		repository.save(student);
 	}
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		 repository.deleteById(id);;
+	}
 
 }

@@ -3,6 +3,7 @@ package com.web.sectionb.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +31,10 @@ public class StudentController {
 	@GetMapping("/students/{id}")
 	public Student getStudentById(@PathVariable int id) {
 		return  service.getById(id);
+	}
+	@DeleteMapping("/students/{id}")
+	public void deleteStudentById(@PathVariable int id) {
+	 service.deleteById(id);
 	}
 	@PostMapping("/students")
 	public void storeStudent(@RequestBody Student student) {
