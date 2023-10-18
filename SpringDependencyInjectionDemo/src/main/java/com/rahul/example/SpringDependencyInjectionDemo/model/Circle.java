@@ -1,6 +1,6 @@
-package com.rahul.jfs.coupling;
+package com.rahul.example.SpringDependencyInjectionDemo.model;
 
-public class Circle{
+public class Circle implements Shape{
 	private int radius;
 	
 	public Circle() {

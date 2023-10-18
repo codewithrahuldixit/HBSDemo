@@ -1,5 +1,7 @@
 package com.rahul.jfs.coupling;
 
+import com.rahul.springdemo.Circle;
+
 public class DrawingCircle {
 
 	private Circle circle;

@@ -1,6 +1,6 @@
-package com.rahul.jfs.coupling;
+package com.rahul.springdemo;
 
-public class Circle{
+public class Circle implements Shape{
 	private int radius;
 	
 	public Circle() {
