@@ -11,4 +11,10 @@ public Drawing(Shape shape) {
 public void draw() {
 	System.out.println(shape);
 }
+
+@Override
+public String toString() {
+	return "Drawing [shape=" + shape + "]";
+}
+
 }
