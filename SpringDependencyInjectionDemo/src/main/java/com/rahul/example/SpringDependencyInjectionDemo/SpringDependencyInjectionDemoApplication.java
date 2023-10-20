@@ -1,15 +1,13 @@
 package com.rahul.example.SpringDependencyInjectionDemo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.rahul.example.SpringDependencyInjectionDemo.model.Drawing;
-import com.rahul.example.SpringDependencyInjectionDemo.model.Shape;
 
 @Configuration
-@ComponentScan
+@ComponentScan("com.rahul.example.SpringDependencyInjectionDemo")
 public class SpringDependencyInjectionDemoApplication {
 
 

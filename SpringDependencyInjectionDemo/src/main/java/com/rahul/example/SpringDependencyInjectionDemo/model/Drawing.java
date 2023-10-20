@@ -1,15 +1,18 @@
 package com.rahul.example.SpringDependencyInjectionDemo.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Drawing {
 
+
 @Autowired
+@Qualifier(value = "square")
 private Shape shape;
 //Constructor Invokes Automatically when Object is Created 
-public Drawing(Shape shape) {
+public Drawing( Shape shape) {
 	super();
 	//System.out.println("Injection is done using Costructor");
 	this.shape = shape;
