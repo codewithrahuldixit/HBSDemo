@@ -1,5 +1,10 @@
 package com.rahul.example.SpringDependencyInjectionDemo.model;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
 public class Circle implements Shape{
 	private int radius;
 	

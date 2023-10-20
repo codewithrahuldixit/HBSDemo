@@ -11,7 +11,7 @@ import com.rahul.example.SpringDependencyInjectionDemo.model.Shape;
 
 @Configuration
 public class ConfDemo {
-
+/*
 	@Bean//These method Automatically Invoked 
 	public Circle getCircle() {
 		return new Circle(4);
@@ -30,4 +30,4 @@ public class ConfDemo {
 		return new Drawing (shape);
 	}
 	
-}
+*/}

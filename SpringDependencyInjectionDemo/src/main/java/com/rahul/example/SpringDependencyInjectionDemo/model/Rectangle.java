@@ -1,5 +1,8 @@
 package com.rahul.example.SpringDependencyInjectionDemo.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Rectangle implements Shape {
 	private int length;
 	private int breath;
