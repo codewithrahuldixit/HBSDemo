@@ -1,16 +1,18 @@
 package com.rahul.example.SpringDependencyInjectionDemo.model;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Lazy;
 
-@Component
-@Qualifier(value = "square")
+import jakarta.inject.Named;
+
+@Named
+@Lazy
 public class Square implements Shape {
 private int side;
 
 public Square() {
 	super();
 	// TODO Auto-generated constructor stub
+	System.out.println("Square Object is created");
 }
 
 public Square(int side) {

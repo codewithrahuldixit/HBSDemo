@@ -1,14 +1,18 @@
 package com.rahul.example.SpringDependencyInjectionDemo.model;
 
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Lazy;
 
-@Component
+import jakarta.inject.Named;
+
+@Named
+@Lazy
 public class Rectangle implements Shape {
 	private int length;
 	private int breath;
 	
 	public Rectangle() {
 		// TODO Auto-generated constructor stub
+		System.out.println("Rectangle Object is created");
 	}
 
 	public Rectangle(int length, int breath) {
