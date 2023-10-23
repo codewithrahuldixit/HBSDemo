@@ -1,8 +1,11 @@
 package com.web.sectionb.service;
 
+import java.net.URI;
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.web.sectionb.StudentRepository;
 import com.web.sectionb.model.Student;
@@ -30,9 +33,16 @@ public StudentService(StudentRepository repository) {
 		//Predicate<? super Student> predicate = student -> student.getId()==id;
 		//return students.stream().filter(predicate ).findFirst().get();
 	}
-	public void save(Student student) {
+	public ResponseEntity<Student> save(Student student) {
 		student.setId(++sid);
 		repository.save(student);
+
+		URI location = ServletUriComponentsBuilder
+				 .fromCurrentRequest()
+				 .path("/{id}")
+				 .buildAndExpand(student.getId())
+				 .toUri();
+		return ResponseEntity.created(location ).build();
 	}
 	public void deleteById(int id) {
 		// TODO Auto-generated method stub

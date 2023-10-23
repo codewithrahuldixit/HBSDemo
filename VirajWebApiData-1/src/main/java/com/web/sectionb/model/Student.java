@@ -2,10 +2,12 @@ package com.web.sectionb.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Size;
 @Entity 
 public class Student {
 	@Id
 private int id;
+	@Size(min = 2, message = "Student Name Must be atleast of 2 characters")
 private String name;
 private String email;
 
