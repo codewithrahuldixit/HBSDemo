@@ -2,6 +2,7 @@ package com.example.web;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,11 @@ static {
 public List<Student> getAll() {
 	
 	return students;
+}
+public Student getById(int id) {
+	Predicate<? super Student> predicate = 
+			(student) -> student.getId()==id;
+	// TODO Auto-generated method stub
+	return students.stream().filter(predicate).findFirst().get();
 }
 }
