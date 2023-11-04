@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,6 +17,7 @@ public class StudentController {
 		super();
 		this.service = service;
 	}
+	//http://localhost:8080/students/
 	@GetMapping("/students")
 	public List<Student> getAllStudents(){
 		return service.getAll();
@@ -24,6 +27,11 @@ public class StudentController {
 	public Student getStudent(@PathVariable int id){
 		return service.getById(id);
 	}
+	//http://localhost:8080/students/
+		@PostMapping("/students")
+		public void getA(@RequestBody Student s){
+			service.store(s);
+		}
 	
 
 }

@@ -26,4 +26,8 @@ public Student getById(int id) {
 	// TODO Auto-generated method stub
 	return students.stream().filter(predicate).findFirst().get();
 }
+public void store(Student s) {
+	s.setId(++sid);
+	students.add(s);
+}
 }
