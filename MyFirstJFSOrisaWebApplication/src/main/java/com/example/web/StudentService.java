@@ -30,4 +30,10 @@ public void store(Student s) {
 	s.setId(++sid);
 	students.add(s);
 }
+public boolean deleteById(int id) {
+	
+	Predicate<? super Student> predicate = (student)-> student.getId()==id;
+	return students.removeIf(predicate );
+	
+}
 }
