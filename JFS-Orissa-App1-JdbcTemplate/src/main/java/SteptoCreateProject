@@ -1,0 +1,36 @@
+Steps to Create An Application with Database Connectivity
+1 Create A Project (Spring Initializer | Spring Tool Suite ) First Add The Following Dependency:
+	1. Spring Web : To Develop Web Application
+	2. H2 Database : To Get An Embedded Database for run the Query
+	3. Devtools : To Increase the performance of the Developer, The Server restarts automatically when The Code Changes (except pom changes)
+	4. Application can Communicate with the database in following 3 ways:
+		a. By Using Jdbc Template :
+			i. JFS-Orissa-App1-JdbcTemplate
+		b. By Using Entity Manager 
+			i. JFS-Orissa-App1-EntityManger
+		c. By Using JPA Repository
+			i. JFS-Orissa-App1-JPA Repository
+	
+	5. Student API
+		a. Student Class (Model) : 
+			i. Id
+			ii. Name
+			iii. Email
+			iv. Contact
+		b. StudentController: Controller to Control The Request Coming From Client 
+			i. getAllStudents() : List <Student> :- Fetching All The Information Stored in Database
+			ii. getStudent(int id) : Student :- return only one student matched 
+			iii. storeStudent(Student student) :- Stored the Student into database
+			iv. deleteStudent(int id ) : deleting the student from the table matched 
+		c. StudentRepository : Used to Communicate with the database
+		d. StudentService : Performing Operation on Repository & Providing the Service to the Controller Class
+		e. Create Data.sql into resorces : 
+		CREATE TABLE Student (
+		    ID int,
+		    NAME varchar(255),
+		    EMAIL varchar(255)
+		);
+		
+		f. To make application level Configuration we used application.properties resides in resources:
+			i. spring.h2.console=true
+			ii. spring.datasource.url=jdbc:h2:mem:orrisaDb
